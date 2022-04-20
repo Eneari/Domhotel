@@ -1,0 +1,451 @@
+{
+    " Add Time to  Clean ": {
+        "": "ajouter du temps de nettoyage"
+    },
+    " Reservation Detail ": {
+        "0": "D\u00e9tail de la r\u00e9servation"
+    },
+    " Room To Clean ": {
+        "0": "Chambre \u00e0 nettoyer"
+    },
+    "%d/%m/%Y %H:%M": {
+        "0": "\ufeff%d/%m/%Y %H:%M",
+        "1": "\ufeff%d/%m/%Y %H:%M",
+        "2": "\ufeff%d/%m/%Y %H:%M"
+    },
+    "A.C.": {
+        "1": "\ufeffA.C.",
+        "2": "\ufeffA.C."
+    },
+    "AC add Time": {
+        "0": "Ac Temps Suppl\u00e9mentaire"
+    },
+    "Ac": {
+        "0": "Ac"
+    },
+    "Ac Add Time": {
+        "0": "Ac Temps Suppl\u00e9mentaire"
+    },
+    "Ac Additional Minuts": {
+        "0": "Ac Minutes suppl\u00e9mentaires"
+    },
+    "Actualizado Por": {},
+    "Add.Time": {
+        "0": "temps addit."
+    },
+    "Add.min.": {
+        "0": "\ufeffAdd.min.",
+        "1": "\ufeffAdd.min.",
+        "2": "\ufeffAdd.min."
+    },
+    "Additional Time": {
+        "0": "Temps additionnel"
+    },
+    "Address": {
+        "0": "Adresse"
+    },
+    "Amount": {
+        "0": "Montant"
+    },
+    "By Address": {
+        "0": "Par adresse"
+    },
+    "By Amount": {
+        "0": "Par montant"
+    },
+    "By Category": {
+        "0": "Par cat\u00e9gorie"
+    },
+    "By Code": {
+        "0": "Par codes"
+    },
+    "By Description": {
+        "0": "Par description"
+    },
+    "By Duration": {},
+    "By Email": {
+        "0": "Par email"
+    },
+    "By First Name": {},
+    "By Formula": {
+        "0": "Par formule"
+    },
+    "By Last Name": {
+        "0": "Par Nom"
+    },
+    "By Month": {
+        "0": "Par mois"
+    },
+    "By Name": {
+        "0": "Par nom"
+    },
+    "By Number": {
+        "0": "Par num\u00e9ro"
+    },
+    "By Profile": {
+        "0": "Par profil"
+    },
+    "By Room": {
+        "0": "Par chambre"
+    },
+    "By Status": {
+        "0": "Par \u00e9tat"
+    },
+    "By Tariff": {
+        "0": "Par tarif"
+    },
+    "By Telephon": {
+        "0": "Par t\u00e9l\u00e9phone"
+    },
+    "By UserName": {
+        "0": "Par nom d'utilisateur"
+    },
+    "Cancel": {
+        "0": "Annuler"
+    },
+    "Category": {
+        "0": "Cat\u00e9gorie"
+    },
+    "Check In": {
+        "0": "Enregistrement"
+    },
+    "Check Out": {
+        "0": "D\u00e9part"
+    },
+    "Clean": {
+        "0": "nettoyer"
+    },
+    "Cleaned": {
+        "0": "Nettoy\u00e9e"
+    },
+    "Clear": {
+        "0": "Clair"
+    },
+    "Code": {
+        "0": "Code"
+    },
+    "Confirm": {
+        "0": "Confirmer"
+    },
+    "Confirm Clean": {
+        "0": "Confirmer le nettoyage"
+    },
+    "Confirm Clean ?": {
+        "": "",
+        "0": "confirmer le nettoyage"
+    },
+    "Created by": {
+        "0": "Cr\u00e9\u00e9 par"
+    },
+    "Currency": {
+        "0": "Monnaie"
+    },
+    "Dashboard": {
+        "0": "Tableau de bord"
+    },
+    "Delete": {
+        "0": "Supprimez"
+    },
+    "Delete Reservation": {
+        "0": "Supprimer la r\u00e9servation"
+    },
+    "Description": {
+        "0": "Description"
+    },
+    "Details": {
+        "0": "D\u00e9tails"
+    },
+    "Displaying rows %s thru %s of %s": {
+        "0": "Afficher les lignes de %s a %s de %s"
+    },
+    "Duration": {
+        "0": "Dur\u00e9e"
+    },
+    "E-mail": {
+        "0": "E-mail"
+    },
+    "Edit": {
+        "0": "\u00c9diter"
+    },
+    "Effectued by": {
+        "0": "Effectu\u00e9 par"
+    },
+    "End Clean": {
+        "0": "\ufeffEnd Clean",
+        "1": "\ufeffEnd Clean",
+        "2": "\ufeffEnd Clean"
+    },
+    "End Cleaning": {
+        "0": "Fin de nettoyer"
+    },
+    "Filter": {
+        "0": "Filtre"
+    },
+    "First Name": {
+        "0": "Pr\u00e9nom"
+    },
+    "Formula": {
+        "0": "Formule"
+    },
+    "Formula Detail": {
+        "0": "\ufeffFormula Detail",
+        "1": "\ufeffFormula Detail",
+        "2": "\ufeffFormula Detail"
+    },
+    "Formula Detail ": {
+        "0": "D\u00e9tail de la formule"
+    },
+    "Formulas": {
+        "0": "Formules"
+    },
+    "Generated": {},
+    "Generated At": {
+        "0": "G\u00e9n\u00e9r\u00e9 \u00e0"
+    },
+    "In Cleaning": {
+        "0": "En nettoyage"
+    },
+    "Language": {
+        "0": "Langue"
+    },
+    "Languages": {
+        "0": "Langues"
+    },
+    "Last Name": {
+        "0": "Nom de famille"
+    },
+    "Last Update": {
+        "0": "Derni\u00e8re mise \u00e0 jour"
+    },
+    "Level": {
+        "0": "Niveau"
+    },
+    "Ligth": {
+        "0": "Lumi\u00e8re"
+    },
+    "Ligth Additional Minuts": {
+        "0": "Minutes suppl\u00e9mentaires l\u00e9g\u00e8res"
+    },
+    "Ligth add Time": {
+        "": "",
+        "0": "Temps d'ajout de la lumi\u00e8re"
+    },
+    "Maintenance": {
+        "0": "Maintenance"
+    },
+    "Maintenance Time": {
+        "0": "Temps de maintenance"
+    },
+    "Mant. Time (min)": {
+        "0": "Temps de maintenance (min)"
+    },
+    "Month": {
+        "0": "Mois"
+    },
+    "More Time": {
+        "0": "Plus de T."
+    },
+    "Name": {
+        "0": "Nom"
+    },
+    "New": {
+        "0": "Nouveau"
+    },
+    "New Reservation": {
+        "0": "Nouvelle r\u00e9servation"
+    },
+    "Next Status": {
+        "0": "Statut suivant"
+    },
+    "Nigth": {
+        "0": "Nuit"
+    },
+    "Number": {
+        "0": "Nombre"
+    },
+    "Only possible to delete from Admin User": {
+        "0": "Uniquement possible de supprimer por l'administrateur"
+    },
+    "Payrolls": {
+        "0": "Paies"
+    },
+    "Placers": {
+        "0": "occupants"
+    },
+    "Plug": {
+        "0": "Prise"
+    },
+    "Plug Additional Minuts": {
+        "0": "Branchez des minutes suppl\u00e9mentaires"
+    },
+    "Plug add Time": {
+        "0": "\ufeffPlug add Time",
+        "1": "\ufeffPlug add Time",
+        "2": "\ufeffPlug add Time"
+    },
+    "Price": {
+        "0": "Prix"
+    },
+    "Profile": {
+        "0": "Profil"
+    },
+    "Profiles": {
+        "0": "Profils"
+    },
+    "Reservation": {
+        "0": "R\u00e9servation"
+    },
+    "Reservation  : Confirm Data": {
+        "0": "R\u00e9servation : Confirmer les valeurs"
+    },
+    "Reservation  : Select Check Out": {
+        "0": "R\u00e9servation : S\u00e9lectionnez D\u00e9part"
+    },
+    "Reservation  : Select Formula": {
+        "0": "R\u00e9servation : S\u00e9lectionnez Formule"
+    },
+    "Reservation : Select Room": {
+        "0": "R\u00e9servation : S\u00e9lectionner la chambre"
+    },
+    "Reservation Check Out": {
+        "0": "D\u00e9part de la r\u00e9servation"
+    },
+    "Reservation Detail": {
+        "0": "D\u00e9tail de la r\u00e9servation"
+    },
+    "Reserve completed cannot be canceled": {
+        "0": "\ufeffReserve completed cannot be canceled",
+        "1": "\ufeffReserve completed cannot be canceled",
+        "2": "\ufeffReserve completed cannot be canceled"
+    },
+    "Return": {
+        "0": "Retourner"
+    },
+    "Room": {
+        "0": "Chambre"
+    },
+    "Room Cleaned": {},
+    "Room Control Settings": {
+        "0": "Param\u00e8tres de contr\u00f4le de la chambre"
+    },
+    "Room Control settings": {
+        "0": "\ufeffRoom Control settings",
+        "1": "\ufeffRoom Control settings",
+        "2": "\ufeffRoom Control settings"
+    },
+    "Room On Cleaning": {
+        "0": "Chambre sur le nettoyage"
+    },
+    "Room To Clean": {
+        "0": "Chambre \u00e0 nettoyer"
+    },
+    "Rooms": {
+        "0": "Chambres"
+    },
+    "Rooms Category": {
+        "0": "Cat\u00e9gorie de chambres"
+    },
+    "Rooms Details": {
+        "0": "D\u00e9tails des chambres"
+    },
+    "Rooms Status": {
+        "0": "\u00c9tat des chambres"
+    },
+    "Rooms Status Details": {
+        "0": "D\u00e9tails de l'\u00e9tat des chambres"
+    },
+    "Rooms Status Edit": {
+        "0": "Modifier l'\u00e9tat des chambres"
+    },
+    "Search": {
+        "0": "Chercher"
+    },
+    "Select": {
+        "0": "S\u00e9lect"
+    },
+    "Send data to control Rooms ?": {
+        "0": "\ufeffSend data to control Rooms ?",
+        "1": "\ufeffSend data to control Rooms ?",
+        "2": "\ufeffSend data to control Rooms ?"
+    },
+    "Staff": {
+        "0": "Personnel"
+    },
+    "Start": {
+        "0": "D\u00e9marrer"
+    },
+    "Start Clean": {
+        "0": "\ufeffStart Clean",
+        "1": "\ufeffStart Clean",
+        "2": "\ufeffStart Clean"
+    },
+    "Start Cleaning": {
+        "0": "Commence a nettoyer"
+    },
+    "Start at": {
+        "0": "Commencer \u00e0"
+    },
+    "Status": {
+        "0": "Situation"
+    },
+    "Stay duration": {
+        "0": "Dur\u00e9e du s\u00e9jour"
+    },
+    "Stop": {
+        "0": "Arr\u00eat"
+    },
+    "Stop at": {},
+    "Submit": {
+        "0": "Envoyer"
+    },
+    "System": {
+        "0": "Syst\u00e8me"
+    },
+    "Tariff": {
+        "0": "Tarif"
+    },
+    "Telephon N": {
+        "0": "T\u00e9l\u00e9phone N"
+    },
+    "The product quantity must be even": {
+        "0": "La quantit\u00e9 de produit doit \u00eatre paire"
+    },
+    "Time": {
+        "0": "Temps"
+    },
+    "Time for maintenance": {
+        "0": "Temps de maintenance"
+    },
+    "To Clean": {
+        "0": "Nettoyer"
+    },
+    "Total": {
+        "0": "Total"
+    },
+    "Total Amount": {
+        "0": "Montant total"
+    },
+    "Total Nigth": {
+        "0": "Total des nuits"
+    },
+    "User": {
+        "0": "Utilisateur"
+    },
+    "Username": {
+        "0": "Username"
+    },
+    "Users": {
+        "0": "Utilisateurs"
+    },
+    "Value not in database": {
+        "0": "La valeur n'est pas dans la base de donn\u00c3\u00a9es"
+    },
+    "dog": {
+        "0": "\ufeffdog",
+        "1": "\ufeffdog",
+        "2": "\ufeffdog"
+    },
+    "invalid email!": {
+        "0": "email invalide!"
+    }
+}

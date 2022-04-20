@@ -1,0 +1,104 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+    
+        
+        <h2 class="title">[[ =T("Rooms Status Details") ]]</h2>
+        
+         <div class="tile is-ancestor " >
+         
+         <div class="tile is-child  box is-vertical is-info  is-3">
+        
+            <div class="field">
+                <label class="label" for="rooms_number">Number</label>
+            <div class="control">
+                <div class="">[[ =room.rooms.number ]]</div>
+            </div>
+            <p class="help"></p>
+            </div>
+            <div class="field">
+                <label class="label" for="rooms_description">Description</label>
+                <div class="control">
+                    <div class="">[[ =room.rooms.description ]]</div>
+                </div>
+                <p class="help"></p>
+                </div>
+                <div class="field">
+                    <label class="label" for="rooms_category">Category</label>
+                    <div class="control">
+                        <div class="">[[ =room.rooms_category.category ]]</div>
+                    </div>
+                    <p class="help"></p>
+                </div>
+                <div class="field">
+                    <label class="label" for="rooms_status">Status</label>
+                    <div class="control">
+                        <div class="">[[  =room.status.status ]]</div>
+                    </div>
+                    <p class="help"></p>
+                </div>
+                
+            </div>
+            <div class="tile is-child  box is-info  is-3">
+                <label class="label" for="rooms_number">Plug</label>
+                <div class="control">
+                 
+                  <label class="radio">
+                    <input type="radio" id="plug-on" name="plug-status" disabled>
+                    On
+                  </label>
+                  <label class="radio">
+                    <input type="radio" id="plug-off"name="plug-status" disabled>
+                    Off
+                  </label>
+                  
+                </div>
+                <div>&nbsp;</div>
+                <label class="label" for="rooms_number">Ligth</label>
+                <div class="control">
+                 
+                  <label class="radio">
+                    <input type="radio" id="ligth-on" name="ligth-status" disabled>
+                    On
+                  </label>
+                  <label class="radio">
+                    <input type="radio" id="ligth-off"name="ligth-status" disabled>
+                    Off
+                  </label>
+                  
+                </div>
+                <div>&nbsp;</div>
+                <label class="label" for="rooms_number">A.C.</label>
+                <div class="control">
+                 
+                  <label class="radio">
+                    <input type="radio" id="ac-on" name="ac-status" disabled>
+                    On
+                  </label>
+                  <label class="radio">
+                    <input type="radio" id="ac-off"name="ac-status" disabled>
+                    Off
+                  </label>
+                  
+                </div>
+                <label class="label" for="rooms_status">Temperature</label>
+              <span id="temp" > ...</span>
+            </div>
+                
+        </div>
+        <div class="field">
+                    <div class="control">
+                        <a class="button is-success" href="[[=URL('rooms/status')]]">Return</a>
+                    </div>
+                </div>
+    </div>
+
+[[block page_scripts]]<!-- individual pages can add scripts here -->
+
+  <script src="js/paho-mqtt-min.js"></script>
+  <script src="js/proto.js"></script>
+
+
+[[end]]
+

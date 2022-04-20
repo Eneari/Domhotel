@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <base href="[[=URL('static')]]/">
+    <meta http-equiv = "Content-type" content = "text / html; charset = utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIAAwAAAAFgAAACgAAAABAAAAAgAAAAEAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAA=="/>
+    <link rel="stylesheet" href="css/bulma.css">
+    [[ T.select("fr")  ]]
+    <!--
+    <link rel="stylesheet" href="css/menu.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    -->
+
+    <!--<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">  -->
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+
+    [[block page_head]]<!-- individual pages can customize header here -->[[end]]
+  </head>
+  <body>
+    
+    <!-- beginning of HTML inserted by extending template -->
+    
+    <div class="tile  is-ancestor">
+        <div class="tile is-child box">
+         [[include 'navbar.html']]
+        <div>
+        
+        <div class="tile  is-parent ">
+
+            <div class="tile is-child box is-vertical is-2 has-background-black-bis has-text-white-ter">
+
+            [[include 'menu.html']]
+        
+            </div>
+            <div class="tile is child box"  style="font-size:smaller;" >
+                 
+                <div>
+                    <!-- Flash alert messages, first optional one in data-alert -->
+                    <flash-alerts class="padded" data-alert="[[=globals().get('flash','')]]"></flash-alerts>
+                </div>
+
+                [[include ]]
+        
+            </div>
+        </div>
+    </div>
+    
+    <!-- end of HTML inserted by extending template -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        Made with <a href="https://py4web.com">py4web</a>.
+       
+      </div>
+       
+    </footer>
+  </body>
+   <!-- You've gotta have utils.js -->
+  <script src="js/utils.js"></script>
+  <script src="js/sugar.min.js"></script>
+  <script src="js/axios.min.js"></script>
+  <!-- <script src="js/vue.js"></script> -->
+  <script src="js/utils.js"></script>
+  [[block page_scripts]]<!-- individual pages can add scripts here -->[[end]]
+</html>

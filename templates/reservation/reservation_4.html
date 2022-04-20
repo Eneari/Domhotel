@@ -1,0 +1,237 @@
+[[extend 'layout.html']]
+
+[[ import locale]]
+
+    <div class="container ">
+            
+        <h2 class="title">[[ =T("Reservation  : Confirm Data") ]]</h2>
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">[[ =T("Number") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.number ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_description">[[ =T("Description") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.description ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">[[ =T("Category") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Formula") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =formula.name]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Tariff") ]]</label>
+                        <div class="control">
+                            <div class="">[[   =locale.format_string('%.0f CFA', formula.tariff, grouping=True, monetary=True) ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+           
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Check In") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =check_in]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Check Out") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =check_out ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Total Nigth") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =total_nigth]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child notification is-info is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Total Amount") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =locale.format_string('%.0f CFA', total_amount, grouping=True, monetary=True) ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Effectued by") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =username.first_name + '  ' + username.last_name]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="tile  is-parent">
+            
+                <div>&nbsp;</div>
+                <div class="tile is-child notification  is-6 ">
+            
+                <h2 class="subtitle">[[ =T("Room Control Settings") ]]</h2>
+                </div>
+            </div>
+            
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T("Plug") ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if controls["plug"]=="1" else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Start") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =controls["plug_start"] ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Stop") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =controls["plug_stop"] ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T("Ligth") ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if controls["ligth"]=="1" else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Start") ]]</label>
+                            <div class="">[[  =controls["ligth_start"] ]]</div>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Stop") ]]</label>
+                            <div class="">[[ =controls["ligth_stop"] ]]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T("A.C.") ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if controls["ac"]=="1" else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Start") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =controls["ac_start"] ]]</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Stop") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =controls["ac_stop"] ]]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+  
+       [[ =form]]
+    </div>
+[[block page_scripts]]<!-- individual pages can add scripts here -->   
+<script>
+    
+    window.onbeforeunload = function() {
+   if (send_Ok == false) {
+       return "Do you really want to leave our brilliant application?";
+   } else {
+      return;
+   }
+};
+
+</script>
+
+  <script src="js/paho-mqtt-min.js"></script>
+  <script src="js/proto.js"></script>
+
+
+[[end]]
+
+

@@ -1,0 +1,664 @@
+{
+    " Add Time to  Clean ": {
+        "0": "\ufeff Add Time to  Clean ",
+        "1": "\ufeff Add Time to  Clean ",
+        "2": "\ufeff Add Time to  Clean "
+    },
+    " Reservation Detail ": {
+        "0": "\ufeff Reservation Detail ",
+        "1": "\ufeff Reservation Detail ",
+        "2": "\ufeff Reservation Detail "
+    },
+    " Room To Clean ": {
+        "0": "\ufeff Room To Clean ",
+        "1": "\ufeff Room To Clean ",
+        "2": "\ufeff Room To Clean "
+    },
+    "%d/%m/%Y %H:%M": {
+        "0": "\ufeff%d/%m/%Y %H:%M",
+        "1": "\ufeff%d/%m/%Y %H:%M",
+        "2": "\ufeff%d/%m/%Y %H:%M"
+    },
+    "A.C.": {
+        "0": "\ufeffA.C.",
+        "1": "\ufeffA.C.",
+        "2": "\ufeffA.C."
+    },
+    "AC add Time": {
+        "0": "\ufeffAC add Time",
+        "1": "\ufeffAC add Time",
+        "2": "\ufeffAC add Time"
+    },
+    "Ac": {
+        "0": "\ufeffAc",
+        "1": "\ufeffAc",
+        "2": "\ufeffAc"
+    },
+    "Ac Additional Minuts": {
+        "0": "\ufeffAc Additional Minuts",
+        "1": "\ufeffAc Additional Minuts",
+        "2": "\ufeffAc Additional Minuts"
+    },
+    "Actualizado Por": {
+        "0": "\ufeffActualizado Por",
+        "1": "\ufeffActualizado Por",
+        "2": "\ufeffActualizado Por"
+    },
+    "Add.Time": {
+        "0": "\ufeffAdd.Time",
+        "1": "\ufeffAdd.Time",
+        "2": "\ufeffAdd.Time"
+    },
+    "Add.min.": {
+        "0": "\ufeffAdd.min.",
+        "1": "\ufeffAdd.min.",
+        "2": "\ufeffAdd.min."
+    },
+    "Additional Time": {
+        "0": "\ufeffAdditional Time",
+        "1": "\ufeffAdditional Time",
+        "2": "\ufeffAdditional Time"
+    },
+    "Address": {
+        "0": "\ufeffAddress",
+        "1": "\ufeffAddress",
+        "2": "\ufeffAddress"
+    },
+    "Amount": {
+        "0": "Importo"
+    },
+    "By Address": {
+        "0": "Per Indirizzo"
+    },
+    "By Amount": {
+        "0": "Per Importo"
+    },
+    "By Category": {
+        "0": "\ufeffBy Category",
+        "1": "\ufeffBy Category",
+        "2": "\ufeffBy Category"
+    },
+    "By Code": {
+        "0": "Per Codice"
+    },
+    "By Description": {
+        "0": "\ufeffBy Description",
+        "1": "\ufeffBy Description",
+        "2": "\ufeffBy Description"
+    },
+    "By Duration": {
+        "0": "\ufeffBy Duration",
+        "1": "\ufeffBy Duration",
+        "2": "\ufeffBy Duration"
+    },
+    "By Email": {
+        "0": "Per Email"
+    },
+    "By First Name": {
+        "0": "\ufeffBy First Name",
+        "1": "\ufeffBy First Name",
+        "2": "\ufeffBy First Name"
+    },
+    "By Formula": {
+        "0": "\ufeffBy Formula",
+        "1": "\ufeffBy Formula",
+        "2": "\ufeffBy Formula"
+    },
+    "By Last Name": {
+        "0": "\ufeffBy Last Name",
+        "1": "\ufeffBy Last Name",
+        "2": "\ufeffBy Last Name"
+    },
+    "By Month": {
+        "0": "Per Mese"
+    },
+    "By Name": {
+        "0": "Per Nome"
+    },
+    "By Number": {
+        "0": "\ufeffBy Number",
+        "1": "\ufeffBy Number",
+        "2": "\ufeffBy Number"
+    },
+    "By Profile": {
+        "0": "\ufeffBy Profile",
+        "1": "\ufeffBy Profile",
+        "2": "\ufeffBy Profile"
+    },
+    "By Room": {
+        "0": "\ufeffBy Room",
+        "1": "\ufeffBy Room",
+        "2": "\ufeffBy Room"
+    },
+    "By Status": {
+        "0": "\ufeffBy Status",
+        "1": "\ufeffBy Status",
+        "2": "\ufeffBy Status"
+    },
+    "By Tariff": {
+        "0": "\ufeffBy Tariff",
+        "1": "\ufeffBy Tariff",
+        "2": "\ufeffBy Tariff"
+    },
+    "By Telephon": {
+        "0": "Per Telefono"
+    },
+    "By UserName": {
+        "0": "Per Nome Utente"
+    },
+    "Cancel": {
+        "0": "\ufeffCancel",
+        "1": "\ufeffCancel",
+        "2": "\ufeffCancel"
+    },
+    "Category": {
+        "0": "\ufeffCategory",
+        "1": "\ufeffCategory",
+        "2": "\ufeffCategory"
+    },
+    "Check In": {
+        "0": "\ufeffCheck In",
+        "1": "\ufeffCheck In",
+        "2": "\ufeffCheck In"
+    },
+    "Check Out": {
+        "0": "\ufeffCheck Out",
+        "1": "\ufeffCheck Out",
+        "2": "\ufeffCheck Out"
+    },
+    "Clean": {
+        "0": "\ufeffClean",
+        "1": "\ufeffClean",
+        "2": "\ufeffClean"
+    },
+    "Cleaned": {
+        "0": "\ufeffCleaned",
+        "1": "\ufeffCleaned",
+        "2": "\ufeffCleaned"
+    },
+    "Clear": {
+        "0": "Pulisci"
+    },
+    "Code": {
+        "0": "Codice"
+    },
+    "Confirm": {
+        "0": "\ufeffConfirm",
+        "1": "\ufeffConfirm",
+        "2": "\ufeffConfirm"
+    },
+    "Confirm Clean": {
+        "0": "\ufeffConfirm Clean",
+        "1": "\ufeffConfirm Clean",
+        "2": "\ufeffConfirm Clean"
+    },
+    "Confirm Clean ?": {
+        "0": "\ufeffConfirm Clean ?",
+        "1": "\ufeffConfirm Clean ?",
+        "2": "\ufeffConfirm Clean ?"
+    },
+    "Created by": {
+        "0": "\ufeffCreated by",
+        "1": "\ufeffCreated by",
+        "2": "\ufeffCreated by"
+    },
+    "Currency": {
+        "0": "\ufeffCurrency",
+        "1": "\ufeffCurrency",
+        "2": "\ufeffCurrency"
+    },
+    "Dashboard": {
+        "0": "\ufeffDashboard",
+        "1": "\ufeffDashboard",
+        "2": "\ufeffDashboard"
+    },
+    "Delete": {
+        "0": "Elimina"
+    },
+    "Delete Reservation": {
+        "0": "\ufeffDelete Reservation",
+        "1": "\ufeffDelete Reservation",
+        "2": "\ufeffDelete Reservation"
+    },
+    "Description": {
+        "0": "\ufeffDescription",
+        "1": "\ufeffDescription",
+        "2": "\ufeffDescription"
+    },
+    "Details": {
+        "0": "Dettaglio"
+    },
+    "Displaying rows %s thru %s of %s": {
+        "0": "Visualizza righe da %s a %s di %s"
+    },
+    "Duration": {
+        "0": "\ufeffDuration",
+        "1": "\ufeffDuration",
+        "2": "\ufeffDuration"
+    },
+    "E-mail": {
+        "0": "\ufeffE-mail",
+        "1": "\ufeffE-mail",
+        "2": "\ufeffE-mail"
+    },
+    "Edit": {
+        "0": "Modifica"
+    },
+    "Effectued by": {
+        "0": "\ufeffEffectued by",
+        "1": "\ufeffEffectued by",
+        "2": "\ufeffEffectued by"
+    },
+    "End Clean": {
+        "0": "\ufeffEnd Clean",
+        "1": "\ufeffEnd Clean",
+        "2": "\ufeffEnd Clean"
+    },
+    "End Cleaning": {
+        "0": "\ufeffEnd Cleaning",
+        "1": "\ufeffEnd Cleaning",
+        "2": "\ufeffEnd Cleaning"
+    },
+    "Filter": {
+        "0": "\ufeffFilter",
+        "1": "\ufeffFilter",
+        "2": "\ufeffFilter"
+    },
+    "First Name": {
+        "0": "\ufeffFirst Name",
+        "1": "\ufeffFirst Name",
+        "2": "\ufeffFirst Name"
+    },
+    "Formula": {
+        "0": "\ufeffFormula",
+        "1": "\ufeffFormula",
+        "2": "\ufeffFormula"
+    },
+    "Formula Detail": {
+        "0": "\ufeffFormula Detail",
+        "1": "\ufeffFormula Detail",
+        "2": "\ufeffFormula Detail"
+    },
+    "Formulas": {
+        "0": "\ufeffFormulas",
+        "1": "\ufeffFormulas",
+        "2": "\ufeffFormulas"
+    },
+    "Generated": {
+        "0": "\ufeffGenerated",
+        "1": "\ufeffGenerated",
+        "2": "\ufeffGenerated"
+    },
+    "Generated At": {
+        "0": "Generato il"
+    },
+    "In Cleaning": {
+        "0": "\ufeffIn Cleaning",
+        "1": "\ufeffIn Cleaning",
+        "2": "\ufeffIn Cleaning"
+    },
+    "Language": {
+        "0": "Lingua"
+    },
+    "Languages": {
+        "0": "\ufeffLanguages",
+        "1": "\ufeffLanguages",
+        "2": "\ufeffLanguages"
+    },
+    "Last Name": {
+        "0": "\ufeffLast Name",
+        "1": "\ufeffLast Name",
+        "2": "\ufeffLast Name"
+    },
+    "Last Update": {
+        "0": "\ufeffLast Update",
+        "1": "\ufeffLast Update",
+        "2": "\ufeffLast Update"
+    },
+    "Level": {
+        "0": "\ufeffLevel",
+        "1": "\ufeffLevel",
+        "2": "\ufeffLevel"
+    },
+    "Ligth": {
+        "0": "\ufeffLigth",
+        "1": "\ufeffLigth",
+        "2": "\ufeffLigth"
+    },
+    "Ligth Additional Minuts": {
+        "0": "\ufeffLigth Additional Minuts",
+        "1": "\ufeffLigth Additional Minuts",
+        "2": "\ufeffLigth Additional Minuts"
+    },
+    "Ligth add Time": {
+        "0": "\ufeffLigth add Time",
+        "1": "\ufeffLigth add Time",
+        "2": "\ufeffLigth add Time"
+    },
+    "Maintenance": {
+        "0": "\ufeffMaintenance",
+        "1": "\ufeffMaintenance",
+        "2": "\ufeffMaintenance"
+    },
+    "Maintenance Time": {
+        "0": "\ufeffMaintenance Time",
+        "1": "\ufeffMaintenance Time",
+        "2": "\ufeffMaintenance Time"
+    },
+    "Mant. Time (min)": {
+        "0": "\ufeffMant. Time (min)",
+        "1": "\ufeffMant. Time (min)",
+        "2": "\ufeffMant. Time (min)"
+    },
+    "Month": {
+        "0": "Mese"
+    },
+    "More Time": {
+        "0": "\ufeffMore Time",
+        "1": "\ufeffMore Time",
+        "2": "\ufeffMore Time"
+    },
+    "Name": {
+        "0": "Nome"
+    },
+    "New": {
+        "0": "Nuovo"
+    },
+    "New Reservation": {
+        "0": "\ufeffNew Reservation",
+        "1": "\ufeffNew Reservation",
+        "2": "\ufeffNew Reservation"
+    },
+    "Next Status": {
+        "0": "\ufeffNext Status",
+        "1": "\ufeffNext Status",
+        "2": "\ufeffNext Status"
+    },
+    "Nigth": {
+        "0": "\ufeffNigth",
+        "1": "\ufeffNigth",
+        "2": "\ufeffNigth"
+    },
+    "Number": {
+        "0": "\ufeffNumber",
+        "1": "\ufeffNumber",
+        "2": "\ufeffNumber"
+    },
+    "Only possible to delete from Admin User": {
+        "0": "\ufeffOnly possible to delete from Admin User",
+        "1": "\ufeffOnly possible to delete from Admin User",
+        "2": "\ufeffOnly possible to delete from Admin User"
+    },
+    "Payrolls": {
+        "0": "Buste Paga"
+    },
+    "Placers": {
+        "0": "\ufeffPlacers",
+        "1": "\ufeffPlacers",
+        "2": "\ufeffPlacers"
+    },
+    "Plug": {
+        "0": "\ufeffPlug",
+        "1": "\ufeffPlug",
+        "2": "\ufeffPlug"
+    },
+    "Plug Additional Minuts": {
+        "0": "\ufeffPlug Additional Minuts",
+        "1": "\ufeffPlug Additional Minuts",
+        "2": "\ufeffPlug Additional Minuts"
+    },
+    "Plug add Time": {
+        "0": "\ufeffPlug add Time",
+        "1": "\ufeffPlug add Time",
+        "2": "\ufeffPlug add Time"
+    },
+    "Price": {
+        "0": "\ufeffPrice",
+        "1": "\ufeffPrice",
+        "2": "\ufeffPrice"
+    },
+    "Profile": {
+        "0": "Profilo"
+    },
+    "Profiles": {
+        "0": "\ufeffProfiles",
+        "1": "\ufeffProfiles",
+        "2": "\ufeffProfiles"
+    },
+    "Reservation": {
+        "0": "\ufeffReservation",
+        "1": "\ufeffReservation",
+        "2": "\ufeffReservation"
+    },
+    "Reservation  : Confirm Data": {
+        "0": "\ufeffReservation  : Confirm Data",
+        "1": "\ufeffReservation  : Confirm Data",
+        "2": "\ufeffReservation  : Confirm Data"
+    },
+    "Reservation  : Select Check Out": {
+        "0": "\ufeffReservation  : Select Check Out",
+        "1": "\ufeffReservation  : Select Check Out",
+        "2": "\ufeffReservation  : Select Check Out"
+    },
+    "Reservation  : Select Formula": {
+        "0": "\ufeffReservation  : Select Formula",
+        "1": "\ufeffReservation  : Select Formula",
+        "2": "\ufeffReservation  : Select Formula"
+    },
+    "Reservation : Select Room": {
+        "0": "\ufeffReservation : Select Room",
+        "1": "\ufeffReservation : Select Room",
+        "2": "\ufeffReservation : Select Room"
+    },
+    "Reservation Check Out": {
+        "0": "\ufeffReservation Check Out",
+        "1": "\ufeffReservation Check Out",
+        "2": "\ufeffReservation Check Out"
+    },
+    "Reserve completed cannot be canceled": {
+        "0": "\ufeffReserve completed cannot be canceled",
+        "1": "\ufeffReserve completed cannot be canceled",
+        "2": "\ufeffReserve completed cannot be canceled"
+    },
+    "Return": {
+        "0": "\ufeffReturn",
+        "1": "\ufeffReturn",
+        "2": "\ufeffReturn"
+    },
+    "Room": {
+        "0": "\ufeffRoom",
+        "1": "\ufeffRoom",
+        "2": "\ufeffRoom"
+    },
+    "Room Cleaned": {
+        "0": "\ufeffRoom Cleaned",
+        "1": "\ufeffRoom Cleaned",
+        "2": "\ufeffRoom Cleaned"
+    },
+    "Room Control Settings": {
+        "0": "\ufeffRoom Control Settings",
+        "1": "\ufeffRoom Control Settings",
+        "2": "\ufeffRoom Control Settings"
+    },
+    "Room Control settings": {
+        "0": "\ufeffRoom Control settings",
+        "1": "\ufeffRoom Control settings",
+        "2": "\ufeffRoom Control settings"
+    },
+    "Room On Cleaning": {
+        "0": "\ufeffRoom On Cleaning",
+        "1": "\ufeffRoom On Cleaning",
+        "2": "\ufeffRoom On Cleaning"
+    },
+    "Room To Clean": {
+        "0": "\ufeffRoom To Clean",
+        "1": "\ufeffRoom To Clean",
+        "2": "\ufeffRoom To Clean"
+    },
+    "Rooms": {
+        "0": "\ufeffRooms",
+        "1": "\ufeffRooms",
+        "2": "\ufeffRooms"
+    },
+    "Rooms Category": {
+        "0": "\ufeffRooms Category",
+        "1": "\ufeffRooms Category",
+        "2": "\ufeffRooms Category"
+    },
+    "Rooms Details": {
+        "0": "\ufeffRooms Details",
+        "1": "\ufeffRooms Details",
+        "2": "\ufeffRooms Details"
+    },
+    "Rooms Status": {
+        "0": "\ufeffRooms Status",
+        "1": "\ufeffRooms Status",
+        "2": "\ufeffRooms Status"
+    },
+    "Rooms Status Details": {
+        "0": "\ufeffRooms Status Details",
+        "1": "\ufeffRooms Status Details",
+        "2": "\ufeffRooms Status Details"
+    },
+    "Rooms Status Edit": {
+        "0": "\ufeffRooms Status Edit",
+        "1": "\ufeffRooms Status Edit",
+        "2": "\ufeffRooms Status Edit"
+    },
+    "Search": {
+        "0": "Cerca"
+    },
+    "Select": {
+        "0": "\ufeffSelect",
+        "1": "\ufeffSelect",
+        "2": "\ufeffSelect"
+    },
+    "Send data to control Rooms ?": {
+        "0": "\ufeffSend data to control Rooms ?",
+        "1": "\ufeffSend data to control Rooms ?",
+        "2": "\ufeffSend data to control Rooms ?"
+    },
+    "Staff": {
+        "0": "\ufeffStaff",
+        "1": "\ufeffStaff",
+        "2": "\ufeffStaff"
+    },
+    "Start": {
+        "0": "\ufeffStart",
+        "1": "\ufeffStart",
+        "2": "\ufeffStart"
+    },
+    "Start Clean": {
+        "0": "\ufeffStart Clean",
+        "1": "\ufeffStart Clean",
+        "2": "\ufeffStart Clean"
+    },
+    "Start Cleaning": {
+        "0": "\ufeffStart Cleaning",
+        "1": "\ufeffStart Cleaning",
+        "2": "\ufeffStart Cleaning"
+    },
+    "Start at": {
+        "0": "\ufeffStart at",
+        "1": "\ufeffStart at",
+        "2": "\ufeffStart at"
+    },
+    "Status": {
+        "0": "\ufeffStatus",
+        "1": "\ufeffStatus",
+        "2": "\ufeffStatus"
+    },
+    "Stay duration": {
+        "0": "\ufeffStay duration",
+        "1": "\ufeffStay duration",
+        "2": "\ufeffStay duration"
+    },
+    "Stop": {
+        "0": "\ufeffStop",
+        "1": "\ufeffStop",
+        "2": "\ufeffStop"
+    },
+    "Stop at": {
+        "0": "\ufeffStop at",
+        "1": "\ufeffStop at",
+        "2": "\ufeffStop at"
+    },
+    "Submit": {
+        "0": "\ufeffSubmit",
+        "1": "\ufeffSubmit",
+        "2": "\ufeffSubmit"
+    },
+    "System": {
+        "0": "\ufeffSystem",
+        "1": "\ufeffSystem",
+        "2": "\ufeffSystem"
+    },
+    "Tariff": {
+        "0": "\ufeffTariff",
+        "1": "\ufeffTariff",
+        "2": "\ufeffTariff"
+    },
+    "Telephon N": {
+        "0": "\ufeffTelephon N",
+        "1": "\ufeffTelephon N",
+        "2": "\ufeffTelephon N"
+    },
+    "The product quantity must be even": {
+        "0": "\ufeffThe product quantity must be even",
+        "1": "\ufeffThe product quantity must be even",
+        "2": "\ufeffThe product quantity must be even"
+    },
+    "Time": {
+        "0": "\ufeffTime",
+        "1": "\ufeffTime",
+        "2": "\ufeffTime"
+    },
+    "Time for maintenance": {
+        "0": "\ufeffTime for maintenance",
+        "1": "\ufeffTime for maintenance",
+        "2": "\ufeffTime for maintenance"
+    },
+    "To Clean": {
+        "0": "\ufeffTo Clean",
+        "1": "\ufeffTo Clean",
+        "2": "\ufeffTo Clean"
+    },
+    "Total": {
+        "0": "\ufeffTotal",
+        "1": "\ufeffTotal",
+        "2": "\ufeffTotal"
+    },
+    "Total Amount": {
+        "0": "\ufeffTotal Amount",
+        "1": "\ufeffTotal Amount",
+        "2": "\ufeffTotal Amount"
+    },
+    "Total Nigth": {
+        "0": "\ufeffTotal Nigth",
+        "1": "\ufeffTotal Nigth",
+        "2": "\ufeffTotal Nigth"
+    },
+    "User": {
+        "0": "Utente"
+    },
+    "Username": {
+        "0": "Nome Utente"
+    },
+    "Users": {
+        "0": "Utenti"
+    },
+    "dog": {
+        "0": "\ufeffdog",
+        "1": "\ufeffdog",
+        "2": "\ufeffdog"
+    },
+    "invalid email!": {
+        "0": "\ufeffinvalid email!",
+        "1": "\ufeffinvalid email!",
+        "2": "\ufeffinvalid email!"
+    },
+    "thing": {
+        "0": "cosa",
+        "1": "cose"
+    }
+}

@@ -1,0 +1,31 @@
+[[extend "layout.html"]]
+ 
+<div class="container ">
+    <h2 class="title">Log in </h2>
+ 
+    <form class="box">
+      [[if path == "login":]]
+        [[=form.custom.begin ]]
+        <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          [[=form.custom.widgets['username'] ]]
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+            [[=form.custom.widgets['login_password']  ]]
+            [[=form.errors]]    
+        </div>
+      </div>
+        
+       
+        [[=form.custom.submit ]]
+        [[=form.custom.end ]]
+      [[else:]]
+        [[=form]]
+      [[pass]]
+    </form>
+</div>

@@ -1,0 +1,114 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+    
+        
+        <h2 class="title">PROTOTYPE</h2>
+        
+        
+        <div class="tile is-ancestor" >
+
+  
+            <div class="tile is-child  notification is-info  is-3">
+                <h3 class="title is-5">Plug</h3>
+                <div class="control">
+                    <p> Set</p>
+                  <label class="radio">
+                    <input type="radio"  name="plug" value="1"  onclick="handleClick(this,'PLUG')">
+                    On
+                  </label>
+                  <label class="radio">
+                    <input type="radio"  name="plug" value="0"  onclick="handleClick(this,'PLUG')">
+                    Off
+                  </label>
+                 <div>&nbsp;</div>
+                  <p> Status</p>
+                  <label class="radio">
+                    <input type="radio" id="plug-on" name="plug-status" disabled>
+                    On
+                  </label>
+                  <label class="radio">
+                    <input type="radio" id="plug-off"name="plug-status" disabled>
+                    Off
+                  </label>
+                  
+                </div>
+            </div>
+            
+            
+        <div class="tile is-child  notification is-info is-3">
+            <h3 class="title is-5">Ligth</h3>
+            <div class="control">
+                <p> Set</p>
+              <label class="radio">
+                <input type="radio" name="ligth" value="1"  onclick="handleClick(this,'LIGTH')" >
+                On
+              </label>
+              <label class="radio">
+                <input type="radio" name="ligth" value="0"  onclick="handleClick(this,'LIGTH')" >
+                Off
+              </label>
+             <div>&nbsp;</div>
+              <p> Status</p>
+              <label class="radio">
+                <input type="radio" id="ligth-on" name="ligth-status" disabled>
+                On
+              </label>
+              <label class="radio">
+                <input type="radio" id="ligth-off" name="ligth-status" disabled>
+                Off
+              </label>
+              
+            </div>
+        
+        </div>
+        <div class="tile is-child  notification is-info is-3">
+            <h3 class="title is-5">A.C.</h3>
+            <div class="control">
+                <p> Set</p>
+              <label class="radio">
+                <input type="radio" name="ac" value="1"  onclick="handleClick(this,'AC')" >
+                On
+              </label>
+              <label class="radio">
+                <input type="radio" name="ac" value="0"  onclick="handleClick(this,'AC')" >
+                Off
+              </label>
+             <div>&nbsp;</div>
+              <p> Status</p>
+              <label class="radio">
+                <input type="radio" id="ac-on"name="ac-status" disabled>
+                On
+              </label>
+              <label class="radio">
+                <input type="radio" id="ac-off"name="ac-status" disabled>
+                Off
+              </label>
+              
+            </div>
+        
+        </div>
+        <div class="tile is-child  notification is-info is-3">
+            <h3 class="title is-5">Temp.</h3>
+            
+              <p> Temperature</p>
+              <span id="temp" > ...</span>
+              <p> Humidity</p>
+              <span id="hum" > ...</span>
+              
+           
+        </div>
+        
+        
+        
+    </div>
+
+
+[[block page_scripts]]<!-- individual pages can add scripts here -->
+
+  <script src="js/paho-mqtt-min.js"></script>
+  <script src="js/proto.js"></script>
+
+
+[[end]]

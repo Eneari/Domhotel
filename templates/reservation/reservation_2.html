@@ -1,0 +1,47 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+    
+        
+        <h2 class="title">[[ =T("Reservation  : Select Formula") ]]</h2>
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">[[ =T("Number") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.number ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_description">[[ =T("Description") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.description ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">[[ =T("Category") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+           
+                        
+        </div>
+  
+       [[ =form]]
+    </div>
+
+

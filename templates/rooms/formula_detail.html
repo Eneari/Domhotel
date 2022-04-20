@@ -1,0 +1,168 @@
+[[extend 'layout.html']]
+
+[[ import datetime ]]
+[[ import locale ]]
+
+
+<div class="container ">
+    
+                   
+        <div id="py4web-flash"></div>
+    
+        
+        <h2 class="title">[[ =T("Formula Detail") ]]</h2>
+        
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">[[ =T('Name') ]]</label>
+                        <div class="control">
+                            <div class="">[[ =formula.formula.name ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+               
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">[[ =T('Category') ]]</label>
+                        <div class="control">
+                            <div class="">[[ =formula.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+             
+            </div>
+            
+             <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">[[ =T('Duration') ]] </label>
+                        <div class="control">
+                            <div class="">[[ =formula.formula.duration ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+               
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">[[ =T('Time') ]]</label>
+                        <div class="control">
+                            <div class="">[[ =formula.time.time ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+             
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T('Tariff') ]]</label>
+                        <div class="control">
+                            <div class="">[[ =locale.format_string('%.0f CFA', formula.formula.tariff, grouping=True, monetary=True)]]</div>
+                            
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="tile  is-parent">
+            
+                <div>&nbsp;</div>
+                <div class="tile is-child notification  is-8 ">
+            
+                <h2 class="subtitle">[[ =T("Room Control Settings") ]]</h2>
+                </div>
+            </div>
+            
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T('Plug') ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if formula.formula.plug else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T('Plug add Time') ]]</label>
+                        <div class="control">
+                            <div class="">[[  =formula.formula.plug_add_time ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile  is-parent">
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T('Ligth') ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if formula.formula.ligth else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T('Ligth add Time') ]]</label>
+                        <div class="control">
+                            <div class="">[[  =formula.formula.ligth_add_time ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile  is-parent">
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" >[[ =T('A.C.') ]]</label>
+                        <input type="checkbox" disabled [[ ='checked' if formula.formula.ac else '' ]] >                        
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T('AC add Time') ]]</label>
+                        <div class="control">
+                            <div class="">[[  =formula.formula.ac_add_time ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+           
+                        
+        </div>
+        <div class="field">
+                    <div class="control">
+                        <a class="button is-success" href="[[=URL('rooms/formula')]]">[[ =T('Return') ]]</a>
+                    </div>
+                </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+[[block page_scripts]]<!-- individual pages can add scripts here -->
+<script src="js/utils.js"></script>
+[[if globals().get('flash'):]]
+<script>utils.flash([[=XML(flash)]]);</script>
+[[pass]]
+
+[[end]]

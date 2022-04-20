@@ -1,0 +1,17 @@
+[[extend 'layout.html']]
+
+[[  T.select(language) ]]
+
+    <div class="container ">
+    
+        
+        <h2 class="title">[[ =T("Room To Clean") ]]</h2>
+         
+        [[if 'action' in request.url_args and request.url_args['action'] in ['details', 'edit']:]]
+            [[form = grid.render()]]
+            [[=form]]
+        [[else:]]
+            [[=grid.render()]]
+        [[pass]]
+        
+    </div>
