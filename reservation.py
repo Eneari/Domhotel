@@ -55,7 +55,7 @@ def reservation_grid(path=None):
         ) 
     ]
         
-    # show list -------------------
+    # show list ----------------------
     if (path == None ) :     
         
         #  controllers and used for all grids in the app
