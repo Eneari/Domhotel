@@ -1,0 +1,197 @@
+<aside class="menu">
+  
+  <ul class="menu-list">
+    <li>
+        <a class="is-active">
+        <span class="icon-text">
+            <span class="icon">
+                <i class=" fa fa-home aria-hidden="true"></i>
+            </span>
+            <span >[[ =T("Dashboard") ]]</span>
+        </span>
+        </a>
+    </li>
+    
+    <li>
+        
+    <ul class="menu-list">
+        <li>
+           <div class="dropdown has-dropdown is-hoverable "  >
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-light" aria-haspopup="true" aria-controls="dropdown-menu">
+                 
+                  <span class="icon is-small">
+                    <i class="fas fa-bed fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                   <span>H.Rooms</span>
+                </button>
+              </div> 
+              
+              <div class="dropdown-menu" id="rooms-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="[[=URL('rooms/category')]]" class="dropdown-item">
+                    [[ =T("Category") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('rooms/rooms')]]"  class="dropdown-item ">
+                    [[ =T("Rooms")    ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('rooms/status')]]"  class="dropdown-item">
+                    [[ =T("Status")   ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('rooms/formula')]]" class="dropdown-item">
+                    [[ =T("Formula")  ]]
+                  </a>
+                </div>
+              </div>
+            </div>
+        </li>
+        
+    </ul>
+        
+    <a class="is-active" href="[[=URL('reservation/reservation')]]">[[ =T("Reservation") ]]</a>
+   
+    
+    <ul class="menu-list">
+   
+        <li>
+           <div class="dropdown has-dropdown is-hoverable "  >
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-light" aria-haspopup="true" aria-controls="dropdown-menu">
+                 
+                  <span class="icon is-small">
+                    <i class="fas fa-broom fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                   <span>[[ =T("Maintenance") ]] </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="Maintenance-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="[[=URL('maintenance/cleaning_list')]]" class="dropdown-item">
+                    [[ =T("To Clean") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                 
+                </div>
+                <div class="dropdown-content">
+                  <a href="[[=URL('maintenance/on_cleaning')]]" class="dropdown-item">
+                    [[ =T("In Cleaning") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                 
+                </div>
+                <div class="dropdown-content">
+                  <a href="[[=URL('maintenance/cleaned')]]" class="dropdown-item">
+                    [[ =T("Cleaned") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                 
+                </div>
+              </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul class="menu-list">
+   
+        <li>
+           <div class="dropdown has-dropdown is-hoverable "  >
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-light" aria-haspopup="true" aria-controls="dropdown-menu">
+                 
+                  <span class="icon is-small">
+                    <i class="fas fa-users fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                   <span>HRM</span>
+                </button>
+              </div>
+              
+              
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="[[=URL('staff/list')]]" class="dropdown-item">
+                    [[ =T("Staff") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('payrolls/list')]]"  class="dropdown-item ">
+                    [[ =T("Payrolls")    ]]
+                  </a>
+                </div>
+              </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul class="menu-list">
+   
+        <li>
+           <div class="dropdown has-dropdown is-hoverable "  >
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-light" aria-haspopup="true" aria-controls="dropdown-menu">
+                 
+                  <span class="icon is-small">
+                    <i class="fas fa-cog fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                   <span>[[ =T("System") ]] </span>
+                </button>
+              </div>
+              
+              
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="[[=URL('user')]]" class="dropdown-item">
+                    [[ =T("Users") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('profile')]]"  class="dropdown-item ">
+                    [[ =T("Profiles")    ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('language')]]"  class="dropdown-item ">
+                    [[ =T("Languages")    ]]
+                  </a>
+                </div>
+              </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul class="menu-list">
+   
+        <li>
+           <div class="dropdown has-dropdown is-hoverable "  >
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-light" aria-haspopup="true" aria-controls="dropdown-menu">
+                 
+                  <span class="icon is-small">
+                    <i class="fas fa-gamepad " aria-hidden="true"></i>
+                  </span>
+                   <span>[[ =T("Rooms Control") ]] </span>
+                </button>
+              </div>
+              
+              
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    
+                  <a href="[[=URL('proto/proto')]]" class="dropdown-item">
+                    [[ =T("Prototype") ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('profile')]]"  class="dropdown-item ">
+                    [[ =T("Profiles")    ]]
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="[[=URL('language')]]"  class="dropdown-item ">
+                    [[ =T("Languages")    ]]
+                  </a>
+                </div>
+              </div>
+            </div>
+        </li>
+    </ul>
+    
+</aside>
+    
