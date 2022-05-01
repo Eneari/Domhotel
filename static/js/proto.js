@@ -1,8 +1,10 @@
 
 
 // ----   configurazione MQtt ---------- INIZIO ----------
-var hostname = "public.mqtthq.com";
-var port = 8083;
+//var hostname = "wss://broker.hivemq.com";
+var hostname = "broker.emqx.io";
+//var port = 8083;
+var port = 8084;
 //var port = 1883;
 //var clientId = "ArduWeb";
 var clientId = "clientID-" + parseInt(Math.random() * 100);
@@ -18,56 +20,69 @@ SUBSCRIBE = true;
 let send_Ok ;
 send_Ok = false;
 
-var mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
+let mqttClient;
 
-mqttClient.onMessageArrived =  MessageArrived;
-mqttClient.onConnectionLost = ConnectionLost;
-
-
-
-if (! MQTT_CONNECTED ) {
-  Connect();
-}
 
 // ----   configurazione MQtt ---------- FINE ----------
 
-/*Initiates a connection to the MQTT broker*/
-function Connect(){
-    window.console.log("----sono in connect -------");
 
-    mqttClient.connect({
-        onSuccess: Connected,
-        onFailure: ConnectionFailed,
-        keepAliveInterval: 120 //60
-        
-    });
+
+
+// Initiates a connection to the MQTT broker
+function pippo(){
+    
+    window.console.log("----sono in connect -------");
+    
+   mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
+    
+    
+// set callback handlers
+mqttClient.onConnectionLost = onConnectionLost;
+mqttClient.onMessageArrived = MessageArrived;
+
+// connect the client
+mqttClient.connect({useSSL:true,onSuccess:Connected, onFailure:ConnectionFailed});
+
+
+
+
+//mqttClient.onMessageArrived =  MessageArrived;
+//mqttClient.onConnectionLost = ConnectionLost;
+    
 }
 
 /*Callback for successful MQTT connection */
 function Connected() {
   window.console.log("Connected");
+   stringa = 'DOMHOTEL/H001/R333/STATUS/#'
+    console.log(stringa)
   
-  if (SUBSCRIBE ) {
+  mqttClient.subscribe(stringa);
   
-    mqttClient.subscribe('DOMHOTEL/H001/+/STATUS/#');
+  MQTT_CONNECTED = true;
+  
+  
+  //if (SUBSCRIBE ) {
+  
+  //  mqttClient.subscribe('DOMHOTEL/H001/+/STATUS/#');
     
-    }
+  //  }
 }
 
 /*Callback for failed connection*/
 function ConnectionFailed(res) {
     window.console.log("Connect failed:" + res.errorMessage);
     MQTT_CONNECTED = false;
-    Connect();
+    pippo();
 
 }
 
 /*Callback for lost connection*/
-function ConnectionLost(res) {
+function onConnectionLost(res) {
   if (res.errorCode !== 0) {
     window.console.log("Connection lost:" + res.errorMessage);
 
-   Connect();
+   pippo();
   }
 }
 
@@ -235,10 +250,8 @@ function sendControl(json_data){
         console.log("plug 0")
 
         codice = "DOMHOTEL/H001/R"+json_data.room+"/SET/PLUG" 
-                console.log(codice)
-                        console.log(json_data.plug)
-
-
+        console.log(codice)
+        console.log(json_data.plug)
         MessageSend(codice, json_data.plug)
     }
     

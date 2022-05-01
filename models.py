@@ -150,6 +150,15 @@ db.define_table('maintenance',
         Field('add_time', "integer" ,default=0),
 
         )    
+        
+
+# Rooms controls table 
+db.define_table('room_control', 
+        Field('key') , 
+        Field('type') , 
+        Field('room', "reference rooms", requires=IS_IN_DB(db, 'rooms.id', '%(number)s', orderby=db.rooms.number)) ,  
+) ,  
+
 
 # profiles table 
 db.define_table('user_profiles', 

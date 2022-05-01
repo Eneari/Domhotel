@@ -30,7 +30,7 @@ def unhautorized():
 @action("staff/list")
 @action("staff/list/<path:path>", method=["POST", "GET"])
 @action.uses(session, db, auth, T,flash, "staff/list.html")
-def example_html_grid(path=None):
+def staff_grid(path=None):
     
     user = auth.get_user() or redirect(URL('auth/login'))
     language = db(db.user_language.user_id == user['id']).select(db.user_language.language).first()
@@ -45,7 +45,21 @@ def example_html_grid(path=None):
         #print("FLASHHHHHHHHH")
         flash.set("Hello World", _class="info", sanitize=True)
         
-    
+    if Authorized("staff/edit" , user['id']) :
+        editable = True
+    else :
+        editable = False
+        
+    if Authorized("staff/delete" , user['id']) :
+        deletable = True
+    else :
+        deletable = False
+        
+    if Authorized("staff/create" , user['id']) :
+        create = True
+    else :
+        create = False
+        
     #  controllers and used for all grids in the app
     grid_param = dict(
         rows_per_page=5,
@@ -71,6 +85,9 @@ def example_html_grid(path=None):
                 search_queries=search_queries,
                 orderby=orderby,
                 show_id=True,
+                deletable=deletable,
+                editable=editable,
+                create=create,
                 T=T,
                 **grid_param)
 

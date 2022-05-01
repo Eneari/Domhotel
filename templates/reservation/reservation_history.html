@@ -4,7 +4,7 @@
     <div class="container ">
     
         
-        <h2 class="title">[[ =T("Reservation : Select Room") ]]</h2>
+        <h2 class="title">[[ =T("Reservation History") ]]</h2>
 
   
         [[if 'action' in request.url_args and request.url_args['action'] in ['details', 'edit']:]]
@@ -14,9 +14,9 @@
             [[=grid.render()]]
         [[pass]]
         
-        <div class="field">
+         <div class="field">
             <div class="control">
-                <a class="button is-success" href="[[=URL('reservation/reservation')]]">[[ =T("Return") ]]</a>
+                <a class="button is-success" href="[[=URL('reservation/reservation_history_filter')]]">[[ =T("Filter") ]]</a>
             </div>
         </div>
     </div>

@@ -98,6 +98,42 @@
 
   <script src="js/paho-mqtt-min.js"></script>
   <script src="js/proto.js"></script>
+  
+  
+<script>
+
+mqtt_state = document.getElementById("mqtt_connect")
+mqtt_state.style.display = "block";
+mqtt_state.innerHTML = "Disconnected";
+mqtt_state.classList.add("is-warning");
+mqtt_state.classList.add("fas");
+mqtt_state.classList.add("fa-thumbs-down");
+
+
+pippo()
+    
+/*Callback for successful MQTT connection */
+function Connected() {
+  //window.console.log("Connected ?????");
+  
+  MQTT_CONNECTED = true
+  mqtt_state.innerHTML = "Connected";
+  mqtt_state.classList.remove("is-warning");
+  mqtt_state.classList.add("is-success");
+  mqtt_state.classList.remove("fa-thumbs-down");
+  mqtt_state.classList.add("fa-thumbs-up");
+
+  
+  stringa = 'DOMHOTEL/H001/R'+[[ =control_id ]] +'/STATUS/#'
+  console.log(stringa)
+  
+  mqttClient.subscribe(stringa);
+    
+ 
+}
+
+      
+</script>
 
 
 [[end]]

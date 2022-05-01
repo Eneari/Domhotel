@@ -2,7 +2,8 @@
 from py4web import action, request, abort, redirect, URL
 from yatl.helpers import A, SPAN, BUTTON
 from .common import db, session, T, cache, auth, logger, authenticated, unauthenticated
-from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB, IS_NOT_IN_DB, IS_DATETIME,IS_DATE_IN_RANGE
+from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB, IS_NOT_IN_DB, \
+        IS_DATETIME,IS_DATE_IN_RANGE, IS_DATE, IS_EMPTY_OR
 
 
 import os
@@ -74,7 +75,7 @@ def reservation_grid(path=None):
             [T('By Formula'), lambda value: db.formula.name.contains(value)],
         ]
         
-        query = db.reservation.id > 0
+        query = db.reservation.completed == False
         orderby = [~db.reservation.check_out]
         #columns = [field for field in db.payrolls if field.readable]
         
@@ -290,8 +291,6 @@ def reservation_3(path=None):
     room = db((db.rooms.id == room_id) & (db.rooms.category == db.rooms_category.id) 
             ).select(db.rooms.number,db.rooms.description,db.rooms_category.category).first()
     
-    room_number = room.rooms.number
-    
     formula = db(db.formula.id == formula_id).select(db.formula.name, db.formula.tariff,
                 db.formula.duration, db.formula.time,
                 db.formula.plug, db.formula.plug_add_time,
@@ -413,7 +412,13 @@ def reservation_4(path=None):
                 db.formula.ligth, db.formula.ligth_add_time,
                 db.formula.ac, db.formula.ac_add_time).first()
     
+    control = db(db.room_control.room == room_id).select(db.room_control.key).first()
+    print(control)
     
+    if control == None :
+        control_id = ""
+    else :
+        control_id = control.key
     
     start = datetime.datetime.strptime(check_in,"%d/%m/%Y %H:%M")
     stop = datetime.datetime.strptime(check_out,"%d/%m/%Y %H:%M")
@@ -427,22 +432,22 @@ def reservation_4(path=None):
     if total_minuts >= 1440  :
     
         import math
-        print(check_in)
-        print(check_out)
-        print(start)
-        print(stop)
-        print( abs((stop-start).days ))
-        print( abs((stop-start).total_seconds() ))
+        #print(check_in)
+        #print(check_out)
+        #print(start)
+        #print(stop)
+        #print( abs((stop-start).days ))
+        #print( abs((stop-start).total_seconds() ))
         total_nigth = math.ceil( (stop-start).total_seconds() / 86400)
-        print( total_nigth)
+        #print( total_nigth)
         total_amount = total_nigth * formula.tariff
     else :
         
         total_nigth = 0
         total_amount =  formula.tariff
 
-    print( total_nigth)
-    print( total_amount)    
+    #print( total_nigth)
+    #print( total_amount)    
         
     #-  room control settings  --------------
 
@@ -462,7 +467,7 @@ def reservation_4(path=None):
                                                       "%d/%m/%Y %H:%M") if ac=="1" else None
    
     
-    controls = {'room':room.rooms.number, "plug":plug,"plug_start":plug_start,"plug_stop":plug_stop,
+    controls = {'room':control_id, "plug":plug,"plug_start":plug_start,"plug_stop":plug_stop,
                 "ligth":ligth,"ligth_start":ligth_start, "ligth_stop" : ligth_stop,
                 "ac":ac,"ac_start":ac_start, "ac_stop" : ac_stop }
                 
@@ -488,7 +493,8 @@ def reservation_4(path=None):
             "_class": "button is-default",
             }
     form.param.sidecar.append(BUTTON(T("Cancel"), **attrs))
-    form.structure.find('[type=submit]')[0]['_onclick'] = 'sendControl( ' +json_object+')'
+    #form.structure.find('[type=submit]')[0]['_onclick'] = 'sendControl( ' +json_object+')'
+    form.structure.find('[type=submit]')[0]['_onclick'] = 'sendData( ' +json_object+')'
     
     username = db(db.auth_user.id == user['id'] ).select(db.auth_user.first_name,db.auth_user.last_name).first()
 
@@ -705,20 +711,11 @@ def reservation_delete(path=None):
 
     return dict( room=room, form=form , T=T ,  language=language.language, username = username)
 
-@action("reservation/reservation_checkout" , method=["POST", "GET"])
-@action("reservation/reservation_checkout/<path:path>", method=["POST", "GET"])
-@action.uses(session, db, auth, T,flash, "reservation/reservation_checkout.html")
-def reservation_checkout(path=None):
+@action("reservation/reservation_history_filter" , method=["POST", "GET"])
+@action("reservation/reservation_history_filter/<path:path>", method=["POST", "GET"])
+@action.uses(session, db, auth, T,flash, "reservation/reservation_history_filter.html")
+def reservation_history_filter(path=None):
   
-    
-    room = db((db.reservation.id == path) & (  db.reservation.room == db.rooms.id  ) &
-            (db.rooms.category == db.rooms_category.id) &
-            (db.reservation.formula == db.formula.id)
-        ).select(db.rooms.number,db.rooms.description,db.rooms_category.category, 
-                db.formula.name, db.formula.tariff,db.reservation.check_in, db.reservation.check_out,
-                db.reservation.last_update).first()
-       
-    
     user = auth.get_user() or redirect(URL('auth/login'))
     language = db(db.user_language.user_id == user['id']).select(db.user_language.language).first()
     
@@ -727,54 +724,32 @@ def reservation_checkout(path=None):
     if not Authorized("reservation/reservation_checkout" , user['id']) :
         redirect(URL('unauthorized'))
     
-    
-
-   
-    #form = Form(db.reservation, 
-    #            record=path,
-     #           readonly=False,
-    #            deletable=False,
-    #            formstyle=FormStyleBulma)
+    from datetime import datetime
+    start = datetime.today().strftime('%Y-%m-%d')
                 
-    form = Form([Field('CheckOut','datetime', label='Check Out',
-                requires=IS_DATETIME() )],
+    form = Form([Field('date_start',"date",default = start, label='Date Start',requires=IS_EMPTY_OR(IS_DATE()) ),
+                 Field('date_stop','date', label='Date Stop',requires=IS_EMPTY_OR(IS_DATE()) )
+                ],
                 keep_values=True,
                 
                 formstyle=FormStyleBulma)
     
-    ##form.validation=check_time_reserve(form,path)
-    #form.structure.find('[type=submit]')[0]['_class'] = 'btn-primary'
-    #form.structure.find('[class=btn-primary]')[0]['_onclick'] = "return confirm('Confirm to delete ?;')"
     
     if form.accepted:
        
-        # Do something with form.vars['product_name'] and form.vars['product_quantity']
-        room_id = db(db.reservation.id==path).select(db.reservation.room).first()
-        
-        row = db(db.rooms.id==room_id.room).select().first()
-        
-        row.update_record(status=1)
-        
-        print(form.vars["CheckOut"] )
-        
-        data = form.vars["CheckOut"] 
+        # Do something with form.vars['product_name'] and form.vars['product_quantity']        
         
         
-        
-        row = db(db.reservation.id==path).select().first()
-        
-        row.update_record(check_out = data )
-
+        print(form.vars["date_start"] )
+        print(form.vars["date_stop"] )
         
        
-        flash.set("Reservation correctly deleted", _class="info", sanitize=True)
-        
-        redirect(URL('reservation/reservation'))
+        redirect(URL('reservation/reservation_history/'+str(form.vars["date_start"])+"/"+str(form.vars["date_stop"])) )
 
 
-    return dict( room=room, form=form , T=T ,  language=language.language)
-
-
+    return dict( form=form , T=T ,  language=language.language, start=start)
+    
+    
 @action("reservation/reservation_detail" , method=["POST", "GET"])
 @action("reservation/reservation_detail/<path:path>", method=["POST", "GET"])
 @action.uses(session, db, auth, T,flash, "reservation/reservation_detail.html")
@@ -906,3 +881,121 @@ class GridActionButton:
       
       
       
+@action("reservation/reservation_history")
+@action("reservation/reservation_history/<path:path>", method=["POST", "GET"])
+@action.uses(session, db, auth, T,flash, "reservation/reservation_history.html")
+def reservation_history(path=None):
+    
+    user = auth.get_user() or redirect(URL('auth/login'))
+    language = db(db.user_language.user_id == user['id']).select(db.user_language.language).first()
+    
+    #print(language.language)
+    
+    T.select(language.language)
+
+    if not Authorized("reservation/reservation" , user['id']) :
+        redirect(URL('unauthorized'))
+        
+    # update room reservation status
+    from .utils import UpdateStatus
+    UpdateStatus()
+        
+    
+  
+    
+    lista = path.split("/")
+    
+    start = lista[0]
+    stop = lista[1]
+    
+    print(start)
+    print(stop)
+    
+    # show list ----------------------
+   
+    
+    #  controllers and used for all grids in the app
+    grid_param = dict(
+        rows_per_page=10,
+        include_action_button_text=True,
+        search_button_text="Filter",
+        formstyle=FormStyleBulma,
+        grid_class_style=GridClassStyleBulma,
+    )
+        
+                               
+    search_queries = [
+        [T('By Room')  , lambda value: db.rooms.number.contains(value)],
+        [T('By Description') , lambda value: db.rooms.description.contains(value)],
+        [T('By Formula'), lambda value: db.formula.name.contains(value)],
+    ]
+    # -- query
+    from functools import reduce
+    import datetime
+    
+    queries=[db.reservation.completed == True]
+    
+    if start != 'None' :
+        #queries.append( db.reservation.check_in >= datetime.datetime.strptime(start,'%Y-%m-%d') )
+        queries.append( db.reservation.check_in >= start )
+    if stop != 'None' :
+        #queries.append( db.reservation.check_in <= datetime.datetime.strptime(stop,'%Y-%m-%d') )
+        queries.append( db.reservation.check_in <= stop )
+    
+    query = reduce(lambda a, b:(a & b ), queries)
+    
+    print(query)
+    
+    #query = db.reservation.id > 0
+    orderby = [~db.reservation.check_out]
+    #columns = [field for field in db.payrolls if field.readable]
+    
+   
+    db.reservation.room.requires=IS_IN_DB(db, 'rooms.id', '%(number)s - %(description)s')
+    db.reservation.formula.requires=IS_IN_DB(db, 'formula.id', '%(name)s - %(tariff)s - %(currency)s')
+    db.reservation.completed.readable = False
+    db.reservation.check_in.requires=IS_DATETIME(format='%d/%m/%Y %H:%M' )
+    
+    columns = [
+        db.rooms.number,
+        db.rooms.description,
+        db.formula.name,
+        db.formula.tariff,
+        #db.formula.currency,
+        db.reservation.total_nigth,
+        db.reservation.total_amount,
+        #Column("check_in", lambda row: datetime.datetime.strftime(row.reservation.check_in, "%d/%m/%Y %H:%M")),
+        #datetime.datetime.strftime(db.reservation.check_in, "%d/%m/%Y %H:%M"),
+        db.reservation.check_in,
+        db.reservation.check_out,
+        db.reservation.completed
+    ]
+    
+    #columns.insert(0, Column("Custom", lambda row: A("click me")))
+    path = None
+    grid = Grid(path,
+                query,
+                columns=columns,
+                search_queries=search_queries,
+                field_id=db.reservation.id,
+                left=[
+                db.rooms.on(db.rooms.id == db.reservation.room),
+                db.formula.on(db.formula.id == db.reservation.formula),
+                db.rooms_category.on(db.rooms_category.id == db.rooms.category),
+
+                ],
+                orderby=orderby,
+                #headings = [ T("Room"),T("Description"), T("Formula"), T("Price"), SPAN(_class='fa fa-coins '),T("Total"), T("Check In"), T("Check Out")],
+                headings = [ T("Room"),T("Description"), T("Formula"), T("Price"),T("Nigth"),T("Total"), T("Check In"), T("Check Out")],
+                show_id=False,
+                deletable=False,
+                editable=False,
+                create=False,
+                T=T,
+                **grid_param)
+
+    grid.formatters['thing.color'] = lambda color: I(_class="fa fa-circle", _style="color:"+color)
+
+    return dict(grid=grid, T=T , language=language.language)
+
+

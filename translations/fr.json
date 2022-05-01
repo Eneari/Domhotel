@@ -18,16 +18,16 @@
         "2": "\ufeffA.C."
     },
     "AC add Time": {
-        "0": "Ac Temps Suppl\u00e9mentaire"
+        "0": "Aj tps Suppl\u00e9mentaire clim"
     },
     "Ac": {
         "0": "Ac"
     },
     "Ac Add Time": {
-        "0": "Ac Temps Suppl\u00e9mentaire"
+        "0": "Aj tps Suppl\u00e9mentaire clim"
     },
     "Ac Additional Minuts": {
-        "0": "Ac Minutes suppl\u00e9mentaires"
+        "0": "Minutes suppl\u00e9mentaires clim"
     },
     "Actualizado Por": {},
     "Add.Time": {
@@ -66,7 +66,9 @@
     "By Email": {
         "0": "Par email"
     },
-    "By First Name": {},
+    "By First Name": {
+        "0": "Par pr\u00e9nom"
+    },
     "By Formula": {
         "0": "Par formule"
     },
@@ -98,7 +100,7 @@
         "0": "Par t\u00e9l\u00e9phone"
     },
     "By UserName": {
-        "0": "Par nom d'utilisateur"
+        "0": "Par utilisateur"
     },
     "Cancel": {
         "0": "Annuler"
@@ -198,7 +200,9 @@
     "Formulas": {
         "0": "Formules"
     },
-    "Generated": {},
+    "Generated": {
+        "0": "G\u00e9n\u00e9r\u00e9"
+    },
     "Generated At": {
         "0": "G\u00e9n\u00e9r\u00e9 \u00e0"
     },
@@ -224,7 +228,7 @@
         "0": "Lumi\u00e8re"
     },
     "Ligth Additional Minuts": {
-        "0": "Minutes suppl\u00e9mentaires l\u00e9g\u00e8res"
+        "0": "Minutes suppl\u00e9mentaires lumi\u00e8res"
     },
     "Ligth add Time": {
         "": "",
@@ -255,16 +259,16 @@
         "0": "Nouvelle r\u00e9servation"
     },
     "Next Status": {
-        "0": "Statut suivant"
+        "0": "Prochain \u00e9tat"
     },
     "Nigth": {
         "0": "Nuit"
     },
     "Number": {
-        "0": "Nombre"
+        "0": "Num\u00e9ro"
     },
     "Only possible to delete from Admin User": {
-        "0": "Uniquement possible de supprimer por l'administrateur"
+        "0": "Suppression uniquement possible que par l'admin"
     },
     "Payrolls": {
         "0": "Paies"
@@ -296,7 +300,7 @@
         "0": "R\u00e9servation"
     },
     "Reservation  : Confirm Data": {
-        "0": "R\u00e9servation : Confirmer les valeurs"
+        "0": "Confirmer la r\u00e9servation"
     },
     "Reservation  : Select Check Out": {
         "0": "R\u00e9servation : S\u00e9lectionnez D\u00e9part"
@@ -329,12 +333,10 @@
         "0": "Param\u00e8tres de contr\u00f4le de la chambre"
     },
     "Room Control settings": {
-        "0": "\ufeffRoom Control settings",
-        "1": "\ufeffRoom Control settings",
-        "2": "\ufeffRoom Control settings"
+        "0": "Param\u00e8tres de contr\u00f4le de la chambre\t"
     },
     "Room On Cleaning": {
-        "0": "Chambre sur le nettoyage"
+        "0": "Chambre en cours de nettoyage"
     },
     "Room To Clean": {
         "0": "Chambre \u00e0 nettoyer"
@@ -380,7 +382,7 @@
         "2": "\ufeffStart Clean"
     },
     "Start Cleaning": {
-        "0": "Commence a nettoyer"
+        "0": "Commencer le nettoyage"
     },
     "Start at": {
         "0": "Commencer \u00e0"
@@ -414,10 +416,10 @@
         "0": "Temps"
     },
     "Time for maintenance": {
-        "0": "Temps de maintenance"
+        "0": "Temps de nettoyage"
     },
     "To Clean": {
-        "0": "Nettoyer"
+        "0": "A Nettoyer"
     },
     "Total": {
         "0": "Total"

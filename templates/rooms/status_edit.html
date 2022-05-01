@@ -88,31 +88,31 @@
                 <div class="control">
                 <label class="label">Plug</label>
                   <label class="radio">
-                    <input type="radio"  data-room= "[[ =room.rooms.number]]"  name="plug" value="1"  onclick="handleClick(this,'PLUG')">
+                    <input type="radio"  data-room= "[[ =control_id]]"  name="plug" value="1"  onclick="handleClick(this,'PLUG')">
                     On
                   </label>
                   <label class="radio">
-                    <input type="radio"  data-room= "[[ =room.rooms.number ]]"  name="plug" value="0"  onclick="handleClick(this,'PLUG')">
+                    <input type="radio"  data-room= "[[ =control_id ]]"  name="plug" value="0"  onclick="handleClick(this,'PLUG')">
                     Off
                   </label>
                   <div>&nbsp;</div>
                 <label class="label">Ligth</label>
                   <label class="radio">
-                    <input type="radio" data-room= "[[ =room.rooms.number]]" name="ligth" value="1"  onclick="handleClick(this,'LIGTH')" >
+                    <input type="radio" data-room= "[[ =control_id]]" name="ligth" value="1"  onclick="handleClick(this,'LIGTH')" >
                     On
                   </label>
                   <label class="radio">
-                    <input type="radio" data-room= "[[ =room.rooms.number]]" name="ligth" value="0"  onclick="handleClick(this,'LIGTH')" >
+                    <input type="radio" data-room= "[[ =control_id]]" name="ligth" value="0"  onclick="handleClick(this,'LIGTH')" >
                     Off
                   </label>
                   <div>&nbsp;</div>
                 <label class="label">A.C.</label>
               <label class="radio">
-                <input type="radio" data-room= "[[ =room.rooms.number]]" name="ac" value="1"  onclick="handleClick(this,'AC')" >
+                <input type="radio" data-room= "[[ =control_id]]" name="ac" value="1"  onclick="handleClick(this,'AC')" >
                 On
               </label>
               <label class="radio">
-                <input type="radio" data-room= "[[ =room.rooms.number]]" name="ac" value="0"  onclick="handleClick(this,'AC')" >
+                <input type="radio" data-room= "[[ =control_id]]" name="ac" value="0"  onclick="handleClick(this,'AC')" >
                 Off
               </label>
                   
@@ -126,9 +126,44 @@
 
 [[block page_scripts]]<!-- individual pages can add scripts here -->
 
-  <script src="js/paho-mqtt-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
   <script src="js/proto.js"></script>
 
+ 
+<script>
 
+mqtt_state = document.getElementById("mqtt_connect")
+mqtt_state.style.display = "block";
+mqtt_state.innerHTML = "Disconnected";
+mqtt_state.classList.add("is-warning");
+mqtt_state.classList.add("fas");
+mqtt_state.classList.add("fa-thumbs-down");
+
+
+pippo()
+    
+/*Callback for successful MQTT connection */
+function Connected() {
+  //window.console.log("Connected ?????");
+  
+  MQTT_CONNECTED = true
+  mqtt_state.innerHTML = "Connected";
+  mqtt_state.classList.remove("is-warning");
+  mqtt_state.classList.add("is-success");
+  mqtt_state.classList.remove("fa-thumbs-down");
+  mqtt_state.classList.add("fa-thumbs-up");
+
+  
+  stringa = 'DOMHOTEL/H001/R'+[[ =control_id ]] +'/STATUS/#'
+  console.log(stringa)
+  
+  mqttClient.subscribe(stringa);
+    
+ 
+}
+
+      
+</script>
 [[end]]
 

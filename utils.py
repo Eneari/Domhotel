@@ -46,6 +46,6 @@ def UpdateStatus():
         
         maintenance = db((db.status.id == next_status.next_status)).select(db.status.maintenance).first()
         if maintenance.maintenance :
-            db.maintenance.insert(reservation=db.reservation.id,room=elm.room,check_in=elm.check_in,
+            db.maintenance.insert(reservation=elm.id,room=elm.room,check_in=elm.check_in,
             check_out=elm.check_out,status=next_status.next_status)
 

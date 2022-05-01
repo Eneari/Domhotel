@@ -55,7 +55,7 @@ from .rooms import *
 from .proto import *
 from .reservation import *
 from .maintenance import *
-
+from .control import *
 
 
 

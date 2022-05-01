@@ -39,6 +39,20 @@ def category_grid(path=None):
     if not Authorized("rooms/category" , user['id']) :
         redirect(URL('unauthorized'))
         
+    if Authorized("rooms/category_edit" , user['id']) :
+        editable = True
+    else :
+        editable = False
+        
+    if Authorized("rooms/category_delete" , user['id']) :
+        deletable = True
+    else :
+        deletable = False
+        
+    if Authorized("rooms/category_create" , user['id']) :
+        create = True
+    else :
+        create = False
     
     #  controllers and used for all grids in the app
     grid_param = dict(
@@ -84,6 +98,9 @@ def category_grid(path=None):
                 orderby=orderby,
                 headings = [ T("Category"), T("Mant. Time (min)"), T("Placers")],
                 show_id=False,
+                deletable=deletable,
+                editable=editable,
+                create=create,
                 T=T,
                 **grid_param)
                 
@@ -113,6 +130,21 @@ def rooms_grid(path=None):
 
     if not Authorized("rooms/rooms" , user['id']) :
         redirect(URL('unauthorized'))
+        
+    if Authorized("rooms/rooms_edit" , user['id']) :
+        editable = True
+    else :
+        editable = False
+        
+    if Authorized("rooms/rooms_delete" , user['id']) :
+        deletable = True
+    else :
+        deletable = False
+        
+    if Authorized("rooms/rooms_create" , user['id']) :
+        create = True
+    else :
+        create = False
         
     # update room reservation status
     from .utils import UpdateStatus
@@ -170,6 +202,9 @@ def rooms_grid(path=None):
                     orderby=orderby,
                     headings = [ T("Number"), T("Description"), T("Category"), T("Status")],
                     show_id=False,
+                    deletable=deletable,
+                    editable=editable,
+                    create=create,
                     T=T,
                     **grid_param)
                     
@@ -319,7 +354,9 @@ def status_details(path=None):
             (db.rooms.status == db.status.id)
         ).select(db.rooms.number,db.rooms.description,db.rooms_category.category, db.status.status).first()
     
-    return dict( T=T , room=room)
+    control = db(db.room_control.room == path).select(db.room_control.key).first()    
+    control_id = control.key
+    return dict( T=T , room=room, control_id = control_id)
 
 # exposed as /examples/html_grid
 @action("rooms/status_edit")
@@ -327,9 +364,9 @@ def status_details(path=None):
 @action.uses(session, db, auth, T,flash, "rooms/status_edit.html")
 def status_edit(path=None):
     
-    print("status_edit")
     
-    print(path)
+    
+    #print(path)
     room = db((db.rooms.id == path) & (  db.rooms.category == db.rooms_category.id  ) &
             (db.rooms.status == db.status.id)
         ).select(db.rooms.number,db.rooms.description,db.rooms_category.category, db.status.status).first()
@@ -357,6 +394,10 @@ def status_edit(path=None):
     
     db.rooms.status.readable = True
     db.rooms.status.writable = False
+    
+      
+    control = db(db.room_control.room == path).select(db.room_control.key).first()    
+    control_id = control.key
 
     
     #db.rooms.category.requires=IS_IN_DB(db, 'rooms_category.id', '%(category)s') 
@@ -368,7 +409,7 @@ def status_edit(path=None):
         redirect(URL('rooms/status'))
 
 
-    return dict( room=room, form=form , T=T )
+    return dict( room=room, form=form , T=T ,control_id=control_id)
 
     
 
@@ -385,6 +426,21 @@ def formula_grid(path=None):
 
     if not Authorized("rooms/formula" , user['id']) :
         redirect(URL('unauthorized'))
+        
+    if Authorized("rooms/formula_edit" , user['id']) :
+        editable = True
+    else :
+        editable = False
+        
+    if Authorized("rooms/formula_delete" , user['id']) :
+        deletable = True
+    else :
+        deletable = False
+        
+    if Authorized("rooms/formula_create" , user['id']) :
+        create = True
+    else :
+        create = False
         
     if (path == None or  'edit' in path or 'new' in path or 'delete' in path) :
         #  controllers and used for all grids in the app
@@ -434,6 +490,9 @@ def formula_grid(path=None):
                     ],
                     headings = [ T("Name"), T("Category"), T("Duration") , T('Time'), T("Tariff"),T("Next Status")],
                     show_id=False,
+                    deletable=deletable,
+                    editable=editable,
+                    create=create,
                     T=T,
                     **grid_param)
                     

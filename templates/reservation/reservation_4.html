@@ -216,6 +216,14 @@
        [[ =form]]
     </div>
 [[block page_scripts]]<!-- individual pages can add scripts here -->   
+
+ <script src="js/paho-mqtt-min.js"></script>
+<script src="js/proto.js"></script>
+
+  <script src="js/utils.js"></script>
+
+
+
 <script>
     
     window.onbeforeunload = function() {
@@ -226,10 +234,57 @@
    }
 };
 
+mqtt_state = document.getElementById("mqtt_connect")
+mqtt_state.style.display = "block";
+mqtt_state.innerHTML = "Disconnected";
+mqtt_state.classList.add("is-warning");
+mqtt_state.classList.add("fas");
+mqtt_state.classList.add("fa-thumbs-down");
+
+
+
+
+pippo()
+    
+/*Callback for successful MQTT connection */
+function Connected() {
+  //window.console.log("Connected ?????");
+  
+  MQTT_CONNECTED = true
+  mqtt_state.innerHTML = "Connected";
+  mqtt_state.classList.remove("is-warning");
+  mqtt_state.classList.add("is-success");
+  mqtt_state.classList.remove("fa-thumbs-down");
+  mqtt_state.classList.add("fa-thumbs-up");
+
+
+
+ 
+  
+  //if (SUBSCRIBE ) {
+  
+  //  mqttClient.subscribe('DOMHOTEL/H001/+/STATUS/#');
+    
+  //  }
+}
+
+
+    
+function sendData(json_data){
+    
+    if (MQTT_CONNECTED) {
+        sendControl(json_data)
+    }
+    else {
+        alert("no connected !!  retray")
+    }
+}
+
+
+   
 </script>
 
-  <script src="js/paho-mqtt-min.js"></script>
-  <script src="js/proto.js"></script>
+ 
 
 
 [[end]]
