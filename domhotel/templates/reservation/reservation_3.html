@@ -1,0 +1,88 @@
+[[extend 'layout.html']]
+
+[[ import locale]]
+
+
+    <div class="container ">
+            
+        <h2 class="title">[[ =T("Reservation  : Select Check Out") ]]</h2>
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">[[ =T("Number") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.number ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_description">[[ =T("Description") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.description ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">[[ =T("Category") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ T("Formula") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =formula.name]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Tariff") ]]</label>
+                        <div class="control">
+                            <div class="">[[ =locale.format_string('%.0f CFA', formula.tariff, grouping=True, monetary=True)  ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+           
+            
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">[[ =T("Check In") ]]</label>
+                        <div class="control">
+                            <div class="">[[  =check_in_s]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                
+            </div>
+                        
+        </div>
+      
+       [[ =form]]
+    </div>
+[[block page_scripts]]<!-- individual pages can add scripts here -->   
+
+
+
+[[end]]
+
+

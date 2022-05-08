@@ -1,0 +1,15 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+        <h2 class="title">[[ =T("Profile") ]] </h2>
+  
+        [[if 'action' in request.url_args and request.url_args['action'] in ['details', 'edit']:]]
+            [[form = grid.render()]]
+            [[=form]]
+        [[else:]]
+            [[=grid.render()]]
+        [[pass]]
+    </div>
+
+

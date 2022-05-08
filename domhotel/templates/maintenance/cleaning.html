@@ -1,0 +1,242 @@
+[[extend 'layout.html']]
+
+[[ import datetime ]]
+[[ import locale ]]
+<div class="container ">
+    
+                   
+        <div id="py4web-flash"></div>
+    
+        
+        <h2 class="title">[[ =T(" Room To Clean ") ]]</h2>
+        
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">Number</label>
+                        <div class="control">
+                            <div id="room" class="">[[ =room.rooms.number ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_description">Description</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.description ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">Category</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                       
+            </div>
+            
+                
+            
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Check In</label>
+                        <div class="control">
+                            <div class="">[[  =datetime.datetime.strftime(room.maintenance.check_in,  "%d/%m/%Y %H:%M") ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Check Out</label>
+                        <div class="control">
+                            <div class="">[[  =datetime.datetime.strftime(room.maintenance.check_out,  "%d/%m/%Y %H:%M")  ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Status</label>
+                        <div class="control">
+                            <div class="">[[  =room.status.status  ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Time for maintenance</label>
+                        <div class="control">
+                            <div class="">[[  =str(room.rooms_category.maintenance_time)+' Min.' ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Start at</label>
+                        <div class="control">
+                            <div id="data_start" class="">[[  =start ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Stop at</label>
+                        <div class="control">
+                            <div id="data_stop" class="">[[  =stop ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            
+             <h4 class="subtitle">[[ =T("Room Control settings") ]]</h4>
+
+          <div class="tile is-ancestor " >
+            
+            <div class="tile  is-parent">
+                <div class="tile is-child box is-3 ">
+                   <div class="field">
+                        <label class="label" for="ligth">Ligth</label>
+                        <div class="control">
+                            <input id="ligth" type="checkbox" checked>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+                   <div class="field">
+                        <label class="label" for="plug">Plug</label>
+                        <div class="control">
+                            <input id="plug" type="checkbox">
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+                   <div class="field">
+                        <div class="control">
+                            <a class="button is-success" onclick="confirm_data()">[[ =T('Confirm') ]]</a>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+                   <div class="field">
+                        <div class="control">
+                            <a class="button is-default" onclick="window.history.back()">[[ =T('Cancel') ]]</a>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+        
+    </div>
+    
+    
+<script>
+
+function confirm_data() {
+
+    // data scraping
+
+    let data_start, data_stop,plug,ligth,room
+
+    room = document.getElementById('room').innerHTML
+    data_start = document.getElementById('data_start').innerHTML
+    data_stop = document.getElementById('data_stop').innerHTML
+    plug = document.getElementById('plug').checked
+    ligth = document.getElementById('ligth').checked
+
+    console.log(room)
+    console.log(data_start)
+    console.log(data_stop)
+    console.log(plug)
+    console.log(ligth)
+    
+    let confirm_send 
+
+    if (confirm("Send data to control Rooms ?") ) {
+               confirm_send = true;
+            }
+            else {
+                confirm_send = false;
+            }
+    
+    // send data to control
+    if ((confirm_send) && (document.getElementById('plug').checked || document.getElementById('ligth').checked )) {
+       
+            
+        var controls = {};
+                                            
+                                            
+        controls["room"] = room;             
+        controls["plug"] = document.getElementById('plug').checked ? "1" :"0" 
+        controls["plug_start"] = document.getElementById('plug').checked ?data_start:null
+        controls["plug_stop" ] = document.getElementById('plug').checked ?data_stop:null
+        controls["ligth"] = document.getElementById('ligth').checked ? "1" :"0"  
+        controls["ligth_start"] = document.getElementById('ligth').checked ?data_start:null
+        controls["ligth_stop" ] = document.getElementById('ligth').checked ?data_stop:null
+        // console.log(controls)
+        json_object = JSON.stringify(controls)
+        console.log(json_object)
+        
+        sendControl(JSON.parse(json_object))
+        
+       
+    }
+    
+    
+    path =  window.location.href +'/'+room+'/'+data_start.replaceAll('/','-')+'/'+data_stop.replaceAll('/','-')+"/"+plug+"/"+ligth
+    console.log(path)
+    
+    window.location.href = path;
+
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+<script src="js/paho-mqtt-min.js"></script>
+<script src="js/proto.js"></script>
+
+

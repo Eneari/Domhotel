@@ -1,0 +1,130 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+    
+                   
+        <div id="py4web-flash"></div>
+    
+        
+        <h2 class="title">[[ =T("Delete Reservation") ]]</h2>
+        
+        <div class="tile is-ancestor is-vertical" >
+            
+            <div class="tile  is-parent">
+         
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_number">Number</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.number ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile  is-child box is-3">
+                    <div class="field">
+                        <label class="label" for="rooms_description">Description</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms.description ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+                    <div class="field">
+                        <label class="label" for="rooms_category">Category</label>
+                        <div class="control">
+                            <div class="">[[ =room.rooms_category.category ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+                       
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Formula</label>
+                        <div class="control">
+                            <div class="">[[  =room.formula.name ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-2 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Tariff</label>
+                        <div class="control">
+                            <div class="">[[  =room.formula.tariff ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Check In</label>
+                        <div class="control">
+                            <div class="">[[  =room.reservation.check_in ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Check Out</label>
+                        <div class="control">
+                            <div class="">[[  =room.reservation.check_out ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="tile  is-parent">
+            
+                <div class="tile is-child box is-3 ">
+
+                   <div class="field">
+                        <label class="label" for="rooms_status">Created by</label>
+                        <div class="control">
+                            <div class="">[[  =username.first_name + '  ' + username.last_name ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+               
+                <div class="tile is-child box is-3 ">
+
+                    <div class="field">
+                        <label class="label" for="rooms_status">Last Update</label>
+                        <div class="control">
+                            <div class="">[[  =room.reservation.last_update ]]</div>
+                        </div>
+                        <p class="help"></p>
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+       [[ = form]]
+    </div>
+
+[[block page_scripts]]<!-- individual pages can add scripts here -->
+<script src="js/utils.js"></script>
+[[if globals().get('flash'):]]
+<script>utils.flash([[=XML(flash)]]);</script>
+[[pass]]
+
+[[end]]
+ <script src="js/paho-mqtt-min.js"></script>
+  <script src="js/proto.js"></script>

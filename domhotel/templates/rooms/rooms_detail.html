@@ -1,0 +1,49 @@
+[[extend 'layout.html']]
+
+
+    <div class="container ">
+    
+        
+        <h2 class="title">[[ =T("Rooms Details") ]]</h2>
+        
+         <div class="tile is-ancestor " >
+         
+         <div class="tile is-child  box is-vertical is-info  is-3">
+        
+            <div class="field">
+                <label class="label" for="rooms_number">Number</label>
+            <div class="control">
+                <div class="">[[ =room.rooms.number ]]</div>
+            </div>
+            <p class="help"></p>
+            </div>
+            <div class="field">
+                <label class="label" for="rooms_description">Description</label>
+                <div class="control">
+                    <div class="">[[ =room.rooms.description ]]</div>
+                </div>
+                <p class="help"></p>
+                </div>
+                <div class="field">
+                    <label class="label" for="rooms_category">Category</label>
+                    <div class="control">
+                        <div class="">[[ =room.rooms_category.category ]]</div>
+                    </div>
+                    <p class="help"></p>
+                </div>
+                <div class="field">
+                    <label class="label" for="rooms_status">Status</label>
+                    <div class="control">
+                        <div class="">[[  =room.status.status ]]</div>
+                    </div>
+                    <p class="help"></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="control">
+            <a class="button is-success" href="[[=URL('rooms/rooms')]]">[[ =T("Return") ]]</a>
+        </div>
+    </div>
+
