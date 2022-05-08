@@ -1,2 +1,0 @@
-# domhotel
-Domotic Motel ERP
