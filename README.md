@@ -23,4 +23,4 @@ Beyond that, the scenario is that of African countries where energy resources ar
 The home automation integration has in fact the task of automatically managing the switching on and off of electrical services such as
 Lighting, sockets and air conditioning according to the time of stay and cleaning and maintenance activities.
 
-![alt text](/home/enea/Scrivania/Heman/Progetto/Diagramma1.svg)
+![alt text](./images/Diagramma1.svg)
